@@ -13,10 +13,10 @@ import java.util.List;
 
 public class Util {
 
-    public static List<Character> importCharacterFromRestApi(){
+    public static ArrayList importCharacterFromRestApi(String urlEndPoint, String apiIndex){
 
         Client client = ClientBuilder.newBuilder().build();
-        Response response = client.target("https://api.jikan.moe/v3/manga/1/characters")
+        Response response = client.target(urlEndPoint)
                 .request(MediaType.TEXT_PLAIN_TYPE)
                 .get();
 
@@ -27,13 +27,15 @@ public class Util {
         try {
             String resp = response.readEntity(String.class);
             HashMap responseMap = new ObjectMapper().readValue(resp, HashMap.class);
-            return (ArrayList)responseMap.get("characters");
+            return (ArrayList)responseMap.get(apiIndex);
         }catch (Exception e){
             throw new RuntimeException(e);
         }
 
     }
 
-
+    public static void main(String[] args) {
+        importCharacterFromRestApi("https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1", "results");
+    }
 
 }
