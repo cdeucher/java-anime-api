@@ -20,7 +20,7 @@ public class Util {
                 .request(MediaType.TEXT_PLAIN_TYPE)
                 .get();
 
-        System.out.println("Import Status: " + response.getStatus());
+        System.out.println(String.format("Import Status: %s, %s", response.getStatus(), apiIndex ));
         //System.out.println("headers: " + response.getHeaders());
         //System.out.println("body:" + resp);
 

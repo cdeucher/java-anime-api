@@ -19,6 +19,8 @@ public class Manga {
     private String type;
     private Integer episodes;
 
+    public Manga(){}
+
     public Manga(int mal_id, String url, String image_url, String title, String synopsis, String type, Integer episodes) {
         this.mal_id = mal_id;
         this.url = url;

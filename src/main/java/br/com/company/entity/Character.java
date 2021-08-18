@@ -17,6 +17,8 @@ public class Character {
     private String name;
     private String role;
 
+    public Character(){}
+
     public Character(int mal_id, String url, String image_url, String name, String role) {
         this.mal_id = mal_id;
         this.url = url;

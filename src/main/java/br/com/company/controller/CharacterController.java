@@ -21,9 +21,6 @@ public class CharacterController {
     @RequestMapping("/import")
     public String importFromApiRest(){
 
-        List<Character> listOfCharacters = Util.importCharacterFromRestApi("https://api.jikan.moe/v3/manga/1/characters", "characters");
-        service.processListOfCharacters(listOfCharacters);
-
         return "";
     }
 

@@ -20,14 +20,8 @@ public class MangaController {
     @RequestMapping("/import")
     @ResponseBody
     public String importFromApiRest(){
-        for(int i=1; i<5; i++)
-            processImportPages(i);
-
         return "";
     }
 
-    private void processImportPages(int page){
-        List<Manga> listOfMangas = Util.importCharacterFromRestApi("https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page="+page, "results");
-        service.processListOfMangas(listOfMangas);
-    }
+
 }
