@@ -31,8 +31,7 @@ public class GradeCriteria implements CommandLineRunner {
             LOG.info("args[{}]: {}", i, args[i]);
         }
 
-        newImport.importMangasToDatabse();
-        newImport.importCharacters();
-
+        //newImport.importMangasToDatabse();
+        //newImport.importCharacters();
     }
 }

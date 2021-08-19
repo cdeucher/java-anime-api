@@ -14,7 +14,9 @@ public class CharacterService {
     private CharacterDao dao;
 
     public void processListOfCharacters(Set<Character> listOfCharacters){
-        listOfCharacters.stream().map(dao::save);
+        for(Character character : listOfCharacters){
+            dao.save(character);
+        }
     }
 
 }
