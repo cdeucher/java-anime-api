@@ -84,8 +84,7 @@ public class MangaServiceTest {
         }
 
         public ThenDSL whenGetListOfMangas() {
-            List<Manga> list = new ArrayList<>();
-            list.addAll(mangaProvider);
+            List<Manga> list = new ArrayList<>(mangaProvider);
 
             Mockito.when(mangaDao.findAll()).thenReturn(list);
             int numberOfMangas = service.getMangas().size();
